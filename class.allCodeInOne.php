@@ -10,6 +10,7 @@ class Solutions{
         }
         return $result;
     }
+    // 17-12-23 (1480. Running Sum of 1d Array)
     function runningSum($nums) {
         $newArray = [];
         $newArray[0] = $nums[0];
@@ -18,11 +19,16 @@ class Solutions{
         }
         return $newArray;
     }
+
+
     
 }
 
 $output = new Solutions();
 
 echo 'This output for Sum of Multiples : '. $output->sumOfMultiples(7)."\n";
-echo 'This output for running sum : '. $output->runningSum([1,2,3,4])."\n";
+
+$resultArray = $output->runningSum([1, 2, 3, 4]);
+echo 'This output for running sum'. "\n";
+print_r($resultArray);
 
