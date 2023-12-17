@@ -20,7 +20,19 @@ class Solutions{
         return $newArray;
     }
 
-
+    function maximumWealth($accounts){
+        $richValue = 0;
+        for($i=0; $i < count($accounts); $i++){
+            $currentCustomer = 0;
+            for( $j =0; $j < count($accounts[$i]); $j++ ){
+                $currentCustomer += $accounts[$i][$j];
+            }
+            if($richValue < $currentCustomer ){
+                $richValue = $currentCustomer; 
+            }
+        }
+        return $richValue;
+    }
     
 }
 
@@ -31,4 +43,7 @@ echo 'This output for Sum of Multiples : '. $output->sumOfMultiples(7)."\n";
 $resultArray = $output->runningSum([1, 2, 3, 4]);
 echo 'This output for running sum'. "\n";
 print_r($resultArray);
+echo "\n";
+
+echo 'This output for maximum wealth : '.$output->maximumWealth([[1,2,3],[3,2,1]]);
 
