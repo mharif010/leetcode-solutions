@@ -10,7 +10,7 @@ class Solutions{
         }
         return $result;
     }
-    // 17-12-23 (1480. Running Sum of 1d Array)
+
     function runningSum($nums) {
         $newArray = [];
         $newArray[0] = $nums[0];
@@ -33,6 +33,23 @@ class Solutions{
         }
         return $richValue;
     }
+
+    function fizzBuzz($fbn){
+        $stringArray = [];
+        for($i=1; $i<=$fbn; $i++){
+            if( $i % 3 == 0 && $i % 5 ==0 ){
+                $stringArray[] = "FizzBuzz";
+            } else if($i % 3 == 0){
+                $stringArray[] = "Fizz";
+            } else if($i % 5 ==0){
+                $stringArray[] = "Buzz";
+            } else{
+                $stringArray[] = strval($i);
+            }   
+        }
+        return $stringArray;
+        
+    }
     
 }
 
@@ -46,4 +63,6 @@ print_r($resultArray);
 echo "\n";
 
 echo 'This output for maximum wealth : '.$output->maximumWealth([[1,2,3],[3,2,1]]);
+echo "\n";
 
+print_r($output->fizzBuzz(15));
